@@ -1,0 +1,16 @@
+
+
+  <div class="driver-select-panel">
+            <div class="driver-list-dropdown" ng-class='{"driver-list-dropdown-active":textHighlight}' ng-click="show()">
+                <div ng-class='{"driver-select-highlight":textHighlight}'>{{display}}</div>
+            </div>
+        </div>
+        
+        <div class="driver-list-container" ng-show="listVisible">
+        	<div>
+        	<input type="text" ng-model="searchText" class="search-box"/>
+        	</div>
+            <div class="driver-scrollable-list" >
+                <div class="driver-item" ng-repeat="item in list |filter :searchText" ng-mouseover="showTooltip(item)" ng-click="selectItem(item)" tooltip>{{item.driverName}}/{{item.vehicleNumber}}</div>
+            </div>
+        </div>
